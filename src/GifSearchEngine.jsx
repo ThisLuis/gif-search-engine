@@ -1,7 +1,13 @@
 export const GifSearchEngine = () => {
 	return (
 		<>
-			<h1>Hola!!!</h1>
+			{/* titulo */}
+			<h1>Gif Search Engine</h1>
+
+			{/* Input */}
+
+			{/* Listado de Gif */}
+				{/* Gif Item */}
 		</>
 	);
 }
