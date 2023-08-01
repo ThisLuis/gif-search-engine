@@ -1,4 +1,10 @@
+import { useState } from 'react';
+
 export const GifSearchEngine = () => {
+
+	const [categories, setCategories] = useState([ 'One punch', 'Attack On Titan', 'Hunter X Hunter' ]);
+	console.log(categories)
+
 	return (
 		<>
 			{/* titulo */}
@@ -8,6 +14,13 @@ export const GifSearchEngine = () => {
 
 			{/* Listado de Gif */}
 				{/* Gif Item */}
+				<ol>
+					{
+						categories.map( category => {
+							return <li key={ category }>{ category }</li>
+						})
+					}
+				</ol>
 		</>
 	);
 }
