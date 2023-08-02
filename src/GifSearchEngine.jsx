@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 export const GifSearchEngine = () => {
 
-	const [categories, setCategories] = useState([ 'One punch', 'Attack On Titan', 'Hunter X Hunter' ]);
+	const [categories, setCategories] = useState([ 'One punch']);
 	
 	const onAddCategorie = (newCategory) => {
 		
@@ -14,23 +15,22 @@ export const GifSearchEngine = () => {
 
 	return (
 		<>
-			{/* titulo */}
+
 			<h1>Gif Search Engine</h1>
 
-			{/* Input */}
+			
 			<AddCategory
 				onNewCategory={ (event) => onAddCategorie(event) }
-				// setCategories={ setCategories }
 			/>
-			{/* Listado de Gif */}
-				{/* Gif Item */}
-				<ol>
-					{
-						categories.map( category => {
-							return <li key={ category }>{ category }</li>
-						})
-					}
-				</ol>
+				
+				{
+					categories.map( (category) => (
+						<GifGrid
+							key={ category }	
+							category={ category }
+						/>
+					))
+				}
 		</>
 	);
 }
