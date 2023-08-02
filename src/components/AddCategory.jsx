@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const AddCategory = ({ setCategories} ) => {
+export const AddCategory = ({ onNewCategory} ) => {
 
 	const [ inputValue, setInputValue ] = useState('');
 
@@ -10,10 +10,8 @@ export const AddCategory = ({ setCategories} ) => {
 
 	const onSubmit = ( event ) => {
 		event.preventDefault();
-		// inputValue es el valor que tenemos que mandar para agregar la categoria
-		console.log( inputValue );
-		if( inputValue.trim().length <= 1) return;
-		setCategories( (categories) => [inputValue, ...categories]);
+		if( inputValue.trim() <= 1 ) return;
+		onNewCategory( inputValue.trim() );
 		setInputValue('');
 	}
 

@@ -5,9 +5,11 @@ export const GifSearchEngine = () => {
 
 	const [categories, setCategories] = useState([ 'One punch', 'Attack On Titan', 'Hunter X Hunter' ]);
 	
-	const onAddCategorie = () => {
-		const categorie = 'Valorant';
-		setCategories([...categories, categorie]);
+	const onAddCategorie = (newCategory) => {
+		
+		if (categories.includes(newCategory)) return;
+
+		setCategories([newCategory, ...categories]);
 	}
 
 	return (
@@ -16,7 +18,10 @@ export const GifSearchEngine = () => {
 			<h1>Gif Search Engine</h1>
 
 			{/* Input */}
-			<AddCategory setCategories={ setCategories }/>
+			<AddCategory
+				onNewCategory={ (event) => onAddCategorie(event) }
+				// setCategories={ setCategories }
+			/>
 			{/* Listado de Gif */}
 				{/* Gif Item */}
 				<ol>
