@@ -1,0 +1,19 @@
+1.-Para crear un archivo de barril creamos un index en la carpeta donde tenemos nuestros archivos a exportar, ya sean componentes, helpers, custom hooks, etc
+
+2.- En el index hacemos las exportaciones necesarias
+
+>index.js
+
+export * from './AddCategory';
+export * from './GifGrid';
+export * from './GifGridItem';
+
+3.- Para usarlas en otro sitio lo hacemos de la siguiente manera:
+
+>Antes de file barrel
+
+import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
+
+>Despues de file barrel
+
