@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Evaluando GifGridItem evaluacion del snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="One punch man"
+      src="www.google.com"
+    />
+    <p>
+      One punch man
+    </p>
+  </div>
+</div>
+`;
